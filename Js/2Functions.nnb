@@ -1,0 +1,370 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Functions"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Define\r\nfunction showMessage()\r\n{\r\n    console.log('its function')\r\n}\r\n//execution\r\nshowMessage();"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "its function",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//with param\r\nfunction showMyMessage(message)\r\n{\r\n    console.log(message)\r\n}\r\n\r\nshowMyMessage('My message')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "My message",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//with return valur\r\nfunction DoSomething(message)\r\n{\r\n    return message + message;\r\n}\r\nlet retValue=DoSomething(\"test\");\r\nconsole.log(retValue);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "testtest",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//variable scope\r\nlet _v=111;\r\nfunction scopevalue()\r\n{\r\n    let _v=123;\r\n    console.log(_v);\r\n}\r\nscopevalue();\r\nconsole.log(_v);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "123",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//Advance scope check \r\n\r\nfunction myfunction(val)\r\n{\r\n    let message=\"start\";\r\n    //message= start\r\n    let startFn=function overridefn()\r\n    {\r\n        let message=\"override\";\r\n        console.log(message);\r\n        //message=override\r\n    }\r\n    startFn();\r\n    console.log(message);\r\n    //message= start\r\n}\r\nmyfunction(1); \r\n//output=== start;\r\n//above message override is in block scope of overridefn\r\n//for block scope use let"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "override",
+                                "start",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\nif(5===5)\r\n{\r\n    let message='test';\r\n}\r\ntry\r\n{\r\n    console.log(message); // undefined\r\n}\r\ncatch(ex)\r\n{\r\n    console.log(ex);\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "ReferenceError: message is not defined",
+                                "    at <Cell 7> [8, 11]",
+                                "    at <Cell 7> [12, 46]",
+                                "    at Script.runInContext (node:vm:139:12)",
+                                "    at Script.runInNewContext (node:vm:144:17)",
+                                "    at Object.runInNewContext (node:vm:298:38)",
+                                "    at C (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)",
+                                "    at t.execCode (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)",
+                                "    at k.<anonymous> (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)",
+                                "    at k.emit (node:events:520:28)",
+                                "    at k.emit (node:domain:475:12)",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Hoisting\r\nif(5===5)\r\n{\r\n    var message1='hoisting message';\r\n}\r\nconsole.log(message1); // This is call hoisting\r\n\r\n// Their is no block scope for var keyword\r\n/*\r\nwhen Javascript compiles all of your code, \r\nall variable declarations using var are hoisted/lifted to the top of their functional/local scope \r\n(if declared inside a function) or to the top of their global scope \r\n(if declared outside of a function) regardless of where the actual declaration has been made.\r\n*/\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "hoisting message",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//iife\r\n\r\n//imediately invoke\r\n(function() {\r\n    let messageiife='This is IIfE';\r\n    console.log(messageiife);\r\n})();\r\n\r\n\r\n\r\n//function expression mean assining into variable\r\nlet app=(function() {\r\nlet messageiife='This is IIfE';\r\nconsole.log(messageiife);\r\nreturn {};\r\n})();\r\n\r\nconsole.log(app);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "This is IIfE",
+                                "This is IIfE",
+                                "{}",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//closure \r\n//\r\nlet app1=(function() {\r\n    let id=1;\r\n    return { id:id};\r\n    // if i remove this you cannot excess inner values, \r\n    //this return is required to hold reference to inner items\r\n    // once function is execute its variable go out of scope . but closure keep them persisted\r\n})();\r\n\r\nconsole.log(app1 ,app1.id);\r\n\r\nlet app2=(function() {\r\n    let id=1;\r\n    let idnew1=function()\r\n    {\r\n        return id;\r\n    };\r\n    return { myid:idnew1()};\r\n})();\r\n\r\nconsole.log(app2, app2.myid);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ id: 1 } 1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//this keyword\r\n\r\nlet o=\r\n{\r\n    id:123,\r\n    name: function ()\r\n    {\r\n        let name1=\"test\";\r\n        console.log(this);\r\n        return name1;\r\n    }\r\n}\r\nlet vv1=o.name();\r\nconsole.log(o, o.name(), o.name().name1, vv1, o.id); "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ id: 123, name: [Function: name] }",
+                                "{ id: 123, name: [Function: name] }",
+                                "{ id: 123, name: [Function: name] }",
+                                "{ id: 123, name: [Function: name] } test undefined test 123",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let oi={\r\n    carId:123,\r\n    getId:function(){\r\n        console.log(this);\r\n        return this.carId;\r\n    }\r\n}\r\nconsole.log(oi.getId());\r\n// change context on object (this)\r\n//call use to to call function with new context\r\n\r\nlet newCar={carId:456};\r\nconsole.log(oi.getId.call(newCar));\r\n//Apply : with Apply you can pass arguments as array \r\nlet oi1={\r\n    carId:123,\r\n    getId:function(prefix){\r\n        return prefix +this.carId;\r\n    }\r\n}\r\nconsole.log(oi1.getId.apply(newCar,['ID: ']));\r\n\r\n//bind :we make copy of function and bind the contexts\r\n// call and bind will not copy function but change 'this'\r\n\r\nlet newCar1={carId:512};\r\nlet newFn=oi.getId.bind(newCar1);\r\nconsole.log(newFn());"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ carId: 123, getId: [Function: getId] }",
+                                "123",
+                                "{ carId: 456 }",
+                                "456",
+                                "ID: 456",
+                                "{ carId: 512 }",
+                                "512",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Arrow function --> function delaration more concise\r\n// arraw function do not have thir 'this', this refer to \r\n//enclosing context\r\nlet getId=()=>123;\r\nconsole.log(101,getId());\r\n\r\nlet getIdPar= Param => Param + 1;\r\nconsole.log(102,getIdPar(123));\r\n\r\nlet getIdSum= (num1, num2) => {return num1 + num2};\r\nconsole.log(103,getIdSum(123,123));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "101 123",
+                                "102 124",
+                                "103 246",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Default Parameter\r\nlet car= function(carId, city='NY')\r\n{\r\n    console.log(carId, city);\r\n}\r\n\r\nconsole.log(car(1234));\r\nconsole.log(car(1234, 'AB'));\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1234 NY",
+                                "undefined",
+                                "1234 AB",
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Closure"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function foo()\r\n{\r\n    var count=0;\r\n    return function(){\r\n        return count++;\r\n    }\r\n}\r\n\r\nx=foo();\r\n\r\nconsole.log(x());//0\r\nconsole.log(x());//1\r\nconsole.log(x());//2\r\n\r\n//function is remembersing its an accesing and remembering an outside variable ;\r\n//variable state is still rememeber"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "0",
+                                "1",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\nfunction sumX(x)\r\n{\r\n    return function(y)\r\n    {\r\n        return x+y;\r\n    }\r\n}\r\nvar add10=sumX(10);\r\nadd10(3); // 13\r\nadd10(14); //24\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m24\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

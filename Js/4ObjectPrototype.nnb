@@ -1,0 +1,31 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "'use strict'\r\n\r\nvar arr=[1,2,3]\r\nvar last=arr[arr.length-1];\r\n\r\nconsole.log(last);\r\n\r\n// we extend this by defining property to its prototype\r\n\r\nObject.defineProperty(Array.prototype,'last',{get:function(){\r\n    return this[this.length-1];\r\n}});\r\n\r\nconsole.log(arr.last);\r\n\r\nvar arrstr=['A', 'b', 'c'];\r\nconsole.log(arrstr.last)\r\n\r\n// What is prototype\r\n// below function will become prototype for all instance created from it\r\nvar myfunc=function(){} \r\nconsole.log(myfunc.prototype) //{}\r\n\r\n// its will have a prototype of object from where it is inherited\r\nvar obj={name:'myobject'}\r\nconsole.log(obj.prototype); // undefined\r\nconsole.log(obj.__proto__); //object {constructor:}\r\n\r\n//\r\n\r\nfunction Cat(name, color)\r\n{\r\n    this.name=name\r\n    this.color=color\r\n}\r\n\r\nvar mycat= new Cat('mycat','col')\r\nconsole.log(Cat.prototype) // object{}\r\nconsole.log(Cat.__proto__)  //function\r\nconsole.log(mycat.prototype) // undefine\r\nconsole.log(mycat.__proto__) //object{} \r\n\r\nconsole.log(Cat.prototype===mycat.__proto__);\r\n\r\nCat.prototype.age=3;\r\nconsole.log(Cat.prototype) // object{age:3}\r\nconsole.log(mycat.__proto__) //object{age:3}\r\n\r\nmycat.age=5;\r\n// here we are only adding age propety to instance not to its prototype\r\nconsole.log(mycat.age) // 5\r\nconsole.log(mycat.__proto__.age) //3\r\n\r\nconsole.log(mycat.hasOwnProperty('age')); //true\r\n\r\n// how it  work\r\n/*\r\nEvery function/object (ex Cat) when create js will add a prototype property to it\r\nWhen we create instance of object Js will add __proto__ to it\r\nthis this case __proto__ : Cat\r\nWhen we use any instance it first chech if it has property if not check prototype\r\n*/\r\n/*\r\nAll objects start with null --> object{}-->so on\r\n*/\r\nconsole.log(mycat.__proto__) //Object{age:}\r\nconsole.log(mycat.__proto__.__proto__) //object{}\r\nconsole.log(mycat.__proto__.__proto__.__proto__) //null\r\n\r\n\r\n// inheritance via functions\r\n// base\r\nfunction Animal(voice)\r\n{\r\n    this.voice=voice||'grunt'\r\n}\r\n// additing method to animal\r\nAnimal.prototype.speak=function()\r\n{\r\n    console.log(this.voice);\r\n}\r\n\r\nfunction Dog(name, color)\r\n{\r\n    Animal.call(this,'boh') // this is how you call Animal constructor\r\n    this.name=name\r\n    this.color=color\r\n}\r\n// creating Animal as Dg prototype\r\nDog.prototype=Object.create(Animal.prototype)\r\n// we use object.create just to add prototype . if we use new it will initilize Animal\r\nDog.prototype.constructor=Dog \r\n// this will call Dog constructor else it would have called Animal constructor\r\n\r\nvar mydog= new Dog('mydog', 'kkk');\r\nconsole.log(mydog);\r\nmydog.speak();\r\n\r\nconsole.log(mydog.__proto__);// Animal\r\nconsole.log(mydog.__proto__.__proto__);//object{constructor:}\r\nconsole.log(mydog.__proto__.__proto__.__proto__);//object{}\r\nconsole.log(mydog.__proto__.__proto__.__proto__.__proto__); // null\r\n\r\n\r\n// we can do the same with class syntax\r\n\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

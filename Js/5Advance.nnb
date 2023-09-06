@@ -1,0 +1,155 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//Constant\r\n\r\nconst conVar=100;\r\n\r\nconsole.log(conVar);\r\ntry\r\n{\r\n    conVar=200;\r\n}\r\ncatch(exception)\r\n{\r\n    console.log(\"constant cannot be changed\");\r\n}\r\n\r\n//const unintilized; (this is wrong; \"constant must be intilized.\")\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "100",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//let and var\r\ntry\r\n{\r\n    console.log(carId);//error\r\n    let carId=42;\r\n}\r\ncatch(exception)\r\n{\r\n    console.log(exception)\r\n}\r\n\r\ntry\r\n{\r\n    console.log(carId);//undefined (not an error)\r\n    var carId=42;\r\n}\r\ncatch(exception)\r\n{\r\n    console.log(exception)\r\n}\r\n\r\n//scope let is local scope or block scope\r\nif(true)\r\n{\r\n    let foo=9;\r\n}\r\ntry{\r\n    console.log(foo);\r\n}\r\ncatch(exception)\r\n{\r\n    console.log(exception)\r\n}\r\nif(true)\r\n{\r\n    var foo1=9;\r\n}\r\ntry{\r\n    console.log(foo1);\r\n}\r\ncatch(exception)\r\n{\r\n    console.log(exception)\r\n}\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "ReferenceError: Cannot access 'carId' before initialization",
+                                "    at <Cell 2> [4, 11]",
+                                "    at <Cell 2> [35, 46]",
+                                "    at Script.runInContext (node:vm:139:12)",
+                                "    at Script.runInNewContext (node:vm:144:17)",
+                                "    at Object.runInNewContext (node:vm:298:38)",
+                                "    at C (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)",
+                                "    at t.execCode (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)",
+                                "    at k.<anonymous> (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)",
+                                "    at k.emit (node:events:520:28)",
+                                "    at k.emit (node:domain:475:12)",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n/*Rest Parameter\r\nConvert Values into array\r\nShould be the last Parameter\r\n*/\r\n\r\nfunction RestFunction(...Ids)\r\n{\r\n    console.log(typeof(Ids));\r\n    console.log(Ids)\r\n}\r\nRestFunction(1,2,3);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "object",
+                                "[ 1, 2, 3 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/*Destructuring Array\r\nConvert Array into values\r\n\r\n*/\r\n\r\nlet Ids=[1,2,3]\r\nlet [id1,id2,id3]=Ids;\r\nconsole.log(id1, typeof(id1));\r\n\r\n//including element as remaining which will be array (type of object)\r\nlet SomeIds=[1,2,3]\r\nlet idnew, rem;\r\n[idnew, ...rem]=SomeIds;\r\nconsole.log(idnew, typeof(idnew));\r\nconsole.log(rem, typeof(rem));\r\n\r\n\r\n//skiping first element \r\n//let [, ...rem1]=SomeIds;\r\n//console.log(rem1, typeof(rem1));\r\n\r\n//Destructing objects\r\nlet mycar={mycarid:1, name:'mycar'};\r\nconsole.log(mycar);\r\n\r\nlet {mycarid,name} = mycar; // Destructing Objects\r\nconsole.log(mycarid, name);\r\n\r\n/*\r\nLike Array you cannot declare and intialized object in seperate line\r\nShould be done in same line as {} also means block\r\nBelow is not allowed\r\nlet mycarid,name;\r\n{mycarid,name} = mycar; \r\nSo to do that use brackets as below\r\n*/\r\n\r\n//let mycar1={mycarid:1, name:'mycar'};// for below code this will give undefine undefine\r\nlet mycar1={mycarid1:1, name1:'mycar'};// for below code this will give undefine undefine\r\nlet mycarid1,name1;\r\n({mycarid1,name1} = mycar1); // brackets to manage object initilization is seperate line\r\nconsole.log(mycarid1, name1);\r\n\r\n\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1 number",
+                                "1 number",
+                                "[ 2, 3 ] object",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/*spread syntax\r\nit take array and convert it into values (parameter of functions)\r\nThis is opposite to rest parameter\r\n*/\r\nfunction myNumbers(number1, number2, number3)\r\n{\r\n    console.log(number1,number2, number3);\r\n\r\n}\r\n\r\nlet numbers=[1,2,3]\r\nmyNumbers(...numbers);\r\nconsole.log(typeof(numbers));\r\n// in Javascripts both string and array are iteratables\r\nlet mystring='abc'\r\nmyNumbers(...mystring);\r\nconsole.log(11111)\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1 2 3",
+                                "object",
+                                "a b c",
+                                "11111",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Foreach for Array\r\nlet carIds= [\r\n    {carId:1, Name:\"A\"},\r\n    {carId:2, Name:\"B\"},\r\n    {carId:3, Name:\"C\"}\r\n];\r\n\r\ncarIds.forEach(car=>console.log(car));\r\ncarIds.forEach((car,index)=>console.log(car, index));\r\n//filter\r\nvar result=carIds.filter(car=>car.carId===1);\r\nconsole.log(result, typeof(result));\r\n\r\n//every\r\nresult=carIds.every(car=>car.carId>1); //is all element has this conditions\r\nconsole.log(result, typeof(result), \"every\");\r\n\r\n//find\r\nresult=carIds.find(car=>car.carId>1);\r\nconsole.log(result, typeof(result));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ carId: 1, Name: 'A' }",
+                                "{ carId: 2, Name: 'B' }",
+                                "{ carId: 3, Name: 'C' }",
+                                "{ carId: 1, Name: 'A' } 0",
+                                "{ carId: 2, Name: 'B' } 1",
+                                "{ carId: 3, Name: 'C' } 2",
+                                "[ { carId: 1, Name: 'A' } ] object",
+                                "false boolean every",
+                                "{ carId: 2, Name: 'B' } object",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

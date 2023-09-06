@@ -1,0 +1,63 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "// starting with Error Handling\r\n\r\ntry{\r\n    let car= newCar;\r\n}\r\ncatch(error){\r\n    console.log(error)\r\n}\r\nconsole.log('continue');\r\n\r\n//using finally\r\ntry{\r\n    let car= newCar;\r\n}\r\ncatch(error){\r\n    console.log(error)\r\n}\r\nfinally{\r\n    console.log('continue');\r\n}\r\n\r\n// throw error\r\ntry{\r\n    throw new Error(\"Test\");\r\n    //Error is build in object in js\r\n}\r\ncatch(error){\r\n    console.log(error)\r\n}\r\nfinally{\r\n    console.log('continue');\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "ReferenceError: newCar is not defined",
+                                "    at <Cell 1> [4, 11]",
+                                "    at <Cell 1> [28, 46]",
+                                "    at Script.runInContext (node:vm:139:12)",
+                                "    at Script.runInNewContext (node:vm:144:17)",
+                                "    at Object.runInNewContext (node:vm:298:38)",
+                                "    at C (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)",
+                                "    at t.execCode (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)",
+                                "    at k.<anonymous> (c:\\Users\\ankur\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)",
+                                "    at k.emit (node:events:520:28)",
+                                "    at k.emit (node:domain:475:12)",
+                                "continue",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Promise\r\nlet promise= new Promise(\r\n    function(resolve,reject){\r\n        setTimeout(resolve, 100, 'Resolved');\r\n    }\r\n)\r\n\r\npromise.then(\r\n    value=>console.log('Resolved:' + value),\r\n    error=>console.log('Rejected:' + error)\r\n)\r\n\r\nlet promise1= new Promise(\r\n    function(resolve,reject){\r\n        setTimeout(reject, 100, 'rejected');\r\n    }\r\n)\r\n\r\npromise1.then(\r\n    value=>console.log('Resolved:' + value),\r\n    error=>console.log('Rejected:' + error)\r\n)\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Resolved:Resolved",
+                                "Rejected:rejected",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

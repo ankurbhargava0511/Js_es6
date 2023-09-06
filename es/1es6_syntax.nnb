@@ -1,0 +1,158 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "//ReferenceError: productId is not defined\r\nconsole.log(productId);\r\nlet productId=12;"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "12",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//undefined\r\nconsole.log(productId);\r\nvar productId=12; "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//12\r\nlet productId=12;\r\nconsole.log(productId);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "12",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//undefined\r\nlet productId;\r\nconsole.log(productId);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Block Scoping\r\n//12\r\nlet productId=12;\r\n{let productId=2000;}\r\nconsole.log(productId);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "12",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Reference Error: productIdis not defined\r\n{let productId=2000;}\r\nconsole.log(productId);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "12",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//12\r\nfunction updateProductId()\r\n{productId=12;}\r\nlet productId=null;\r\nupdateProductId();\r\nconsole.log(productId);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "12",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//42\r\nlet productId=42;\r\nfor(let productId=0;productId<10;productId++)\r\n{}\r\nconsole.log(productId);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n \r\n\r\n \r\n//2  because a closour is created and at the end it return 2\r\nlet updateFunctions=[];\r\nfor(vari=0;i<2;i++)\r\n{updateFunctions.push(function(){returni;});}\r\nconsole.log(updateFunctions[0]());\r\n \r\n//0\r\nlet updateFunctions=[];\r\nfor(leti=0;i<2;i++){updateFunctions.push(function(){returni;});}\r\nconsole.log(updateFunctions[0]());\r\n\r\n//100\r\nconst MRKUP_PCT=100;\r\nconsole.log(MRKUP_PCT);\r\n\r\n//SyntaxError: Unexpected token ;  // As not intilized\r\nconst MRKUP_PCT;\r\nconsole.log(MRKUP_PCT);\r\n\r\n//TypeError: Assignment to constant variable.\r\nconst MRKUP_PCT=100;\r\nMRKUP_PCT=10;\r\nconsole.log(MRKUP_PCT);\r\n\r\n//100 its allowed as its a block scope\r\nconst MRKUP_PCT=100;\r\nif(MRKUP_PCT>0){\r\nconstMRKUP_PCT=10;\r\n}\r\nconsole.log(MRKUP_PCT);\r\n\r\n//Arrow Functions\r\n\r\n//function \r\nvar getPrice=()=>5.99;\r\nconsole.log(typeof(getPrice));\r\n\r\n//5.99\r\nvar getPrice=()=>5.99;\r\nconsole.log(getPrice());\r\n\r\n//8\r\nvar getPrice=count=>count*4.00;\r\nconsole.log(getPrice(2));\r\n\r\n//8.56\r\nvar getPrice=(count,tax)=>count*4.00*(1+tax);\r\nconsole.log(getPrice(2,.07));\r\n\r\n//8.56 // as we have a block we need to add return statement\r\nvar getPrice=(count,tax)=>\r\n{var price=count*4.00;\r\nprice*=(1+tax);\r\nreturn price;\r\n}\r\nconsole.log(getPrice(2,.07));\r\n\r\n// this keyword \r\n//#document\r\ndocument.addEventListener('click',function(){console.log(this);\r\n});\r\n\r\n//Window {...}\r\ndocument.addEventListener('click',()=>console.log(this));\r\n\r\n\r\n//Object {number: 123}\r\nvar invoice={number:123,process:function()\r\n{\r\n  console.log(this);\r\n}};\r\ninvoice.process();\r\n\r\n//Window { ... }\r\nvar invoice={number:123,process:()=>console.log(this)};\r\ninvoice.process();\r\n\r\n//123\r\nvar invoice={number:123,process:function()\r\n{\r\n\treturn()=>console.log(this.number);\r\n }};\r\ninvoice.process()();\r\n\r\n//123  you connot bind context (object ) to an arrow function\r\nvar invoice={number:123,process:function(){return()=>console.log(this.number);\r\n}};\r\nvar newInvoice={number:456};\r\ninvoice.process().bind(newInvoice)();\r\n\r\n//123\r\nvar invoice={number:123,process:function()\r\n{\r\n\treturn()=>console.log(this.number);\r\n}};\r\nvar newInvoice={number:456};\r\ninvoice.process().call(newInvoice);\r\n\r\n//SyntaxError: unexpected token =>\r\n// you cannot at => in new line\r\nvar getPrice=()\r\n=>5.99;\r\nconsole.log(typeofgetPrice);\r\n\r\n//false\r\nvar getPrice=()=>5.99;\r\nconsole.log(getPrice.hasOwnProperty(\"prototype\"));\r\n\r\n//Default Function Parameters\r\n//1000\r\nvar getProduct=function(productId=1000)\r\n{console.log(productId);\r\n};\r\ngetProduct();\r\n\r\n//1000, hardware // for undefined javascript use default\r\nvar getProduct=function(productId=1000,type='software'){console.log(productId+','+type);\r\n};\r\ngetProduct(undefined,'hardware');\r\n\r\n//5.35  // default can access function\r\nvar getTotal=function(price,tax=price*0.07){console.log(price+tax);\r\n};\r\ngetTotal(5.00);\r\n\r\n//5.35  //its allowed , js can access variable in context\r\nvar baseTax=0.07;\r\nvar getTotal=function(price,tax=price*baseTax){console.log(price+tax);\r\n};\r\ngetTotal(5.00);\r\n\r\n//5.35\r\nvar generateBaseTax=()=>0.07;\r\nvar getTotal=function(price,tax=price*generateBaseTax()){console.log(price+tax);\r\n};\r\ngetTotal(5.00);\r\n\r\n//1 // javascript skip deafult parameters\r\nvar getTotal=function(price,tax=0.07){console.log(arguments.length);\r\n};\r\ngetTotal(5.00);\r\n\r\n//SyntaxError: Use before declaration\r\nvar getTotal=function(price=adjustment,adjustment=1.00) {console.log(price+adjustment);\r\n};\r\ngetTotal();\r\n\r\n//6\r\nvar getTotal=function(price=adjustment,adjustment=1.00) {console.log(price+adjustment);\r\n};\r\ngetTotal(5.00);\r\n\r\n//20 // Dynamic functions\r\nvar getTotal=new Function(\"price=20.00\",\"returnprice;\");\r\nconsole.log(getTotal());\r\n\r\n//Rest and Spread\r\n\r\n//true\r\nvar showCategories=function(productId,...categories)\r\n{console.log(categories instanceof Array);\r\n};\r\nshowCategories(123,'search','advertising');\r\n\r\n \r\n//['search', 'advertising']\r\nvar showCategories=function(productId,...categories)\r\n{console.log(categories);\r\n};\r\nshowCategories(123,'search','advertising'); \r\n\r\n//[]\r\nvar showCategories=function(productId,...categories)\r\n{console.log(categories);\r\n};\r\nshowCategories(123);\r\n\r\n//1 Javascript ignore rest parameter in length\r\nvar showCategories=function(productId,...categories){};\r\nconsole.log(showCategories.length);\r\n\r\n//3\r\nvar showCategories=function(productId,...categories)\r\n{console.log(arguments.length);\r\n};\r\nshowCategories(123,'search','advertising');\r\n\r\n//['search', 'advertising']\r\nvar showCategories=\r\nnewFunction(\"...categories\",\"return categories;\");\r\nconsole.log(showCategories('search','advertising'));\r\n\r\n//Spread\r\n//20\r\nvar prices=[12,20,18];\r\nvar maxPrice=Math.max(...prices);\r\nconsole.log(maxPrice);\r\n\r\n//[12, 20, 18]\r\nvar prices=[12,20,18];\r\nvar newPriceArray=[...prices];\r\nconsole.log(newPriceArray);\r\n\r\n//[undefined, undefined] \r\nvar newPriceArray=Array(...[,,]);\r\nconsole.log(newPriceArray);\r\n\r\n//[undefined, undefined] \r\nvar newPriceArray= [...[,,]];\r\nconsole.log(newPriceArray);\r\n\r\n//4\r\nvar maxCode=Math.max(...\"43210\");\r\nconsole.log(maxCode);\r\n\r\n//[\"\",\"B\",\"C\",\"D\",\"E\"]\r\nvar codeArray=[\"\",...\"BCD\",\"E\"];\r\nconsole.log(codeArray);\r\n\r\n//Object Literal Extensions\r\n\r\n//{price: 5.99,quantity: 30}\r\nvar price=5.99,quantity=30;\r\nvar productView={price,quantity};\r\nconsole.log(productView);\r\n\r\n//59.900000000000006\r\nvar price=5.99,quantity=10;\r\nvar productView={\r\n\tprice,\r\n\tquantity,\r\n\tcalculateValue(){\r\n\treturn this.price*this.quantity}};\r\nconsole.log(productView.calculateValue());\r\n\r\n//59.900000000000006\r\nvar price=5.99,quantity=10;\r\nvar productView={\r\n\tprice: 7.99,\r\n\tquantity: 1,\r\n\tcalculateValue(){\r\n\t\treturnthis.price*this.quantity\r\n\t\t}};\r\nconsole.log(productView.calculateValue());\r\n\r\n//59.900000000000006 // with dynamic function\r\nvar price=5.99,quantity=10;\r\nvar productView={\r\n\tprice,\r\n\tquantity,\r\n\t\"calculatevalue\"(){\r\n\t\treturnthis.price*this.quantity\r\n\t\t}};\r\nconsole.log(productView[\"calculatevalue\"]());\r\n\r\n//{dynamicField: 5.99} // with dynamic field\r\nvar field='dynamicField'\r\nvar price=5.99;\r\nvar productView={[field]:price};\r\nconsole.log(productView);\r\n\r\n//{dynamicField-001: 5.99}\r\nvar field='dynamicField'\r\nvar price=5.99;\r\nvar productView={[field+\"-001\"]:price};\r\nconsole.log(productView);\r\n\r\n//in a method\r\nvar method='doIt'\r\nvar productView={\r\n\t[method+\"-001\"]()\r\n\t{console.log(\"inamethod\");\r\n}};\r\nproductView['doIt-001']();\r\n\r\n//true\r\nvar ident='productId';\r\nvar productView={\r\n\tget[ident](){\r\n\t\treturn true;},\r\n\tset[ident](value){}};\r\nconsole.log(productView.productId);\r\n\r\n//for ... of Loops\r\n/* \r\nhardware\r\nsoftware\r\nvaporware*/\r\nvar categories=['hardware','software','vaporware'];\r\nfor(var itemofcategories){console.log(item);\r\n}\r\n/*\r\nundefined\r\nundefined */\r\nvar categories=[,,];\r\nfor(var item of categories){console.log(item);\r\n}\r\n\r\n//5\r\nvar codes=\"ABCDF\";\r\nvar count=0;\r\nfor(var codeofcodes){count++;\r\n}console.log(count);\r\n\r\n//Octal and Binary Literals\r\n//8\r\nvar value=0o10;\r\nconsole.log(value);\r\n\r\n//8\r\nvar value=0O10;\r\nconsole.log(value);\r\n\r\n//2\r\nvar value=0b10;\r\nconsole.log(value);\r\n\r\n//2\r\nvar value=0B10;\r\nconsole.log(value);\r\n\r\n//Template Literals\r\n//Invoice Number: 1350\r\nlet invoiceNum='1350';\r\nconsole.log(`InvoiceNumber:${invoiceNum}`);\r\n\r\n//Invoice Number: 1350\r\nlet invoiceNum='1350';\r\nconsole.log(`InvoiceNumber:${invoiceNum}`);\r\n\r\n//Invoice Number: ${invoiceNum} \r\n// no intepretation take place due to escaping char\r\nlet invoiceNum='1350';\r\nconsole.log(`InvoiceNumber:\\${invoiceNum}`);\r\n\r\n/*A\r\nB\r\nC*/\r\n// interpolation mentain whitespace etc.\r\nlet message=`A\r\nB\r\nC`;\r\nconsole.log(message);\r\n// we are allowed to have expression\r\n/*Invoice Number:\r\nINV-1350 */\r\nlet invoiceNum='1350';\r\nconsole.log(`InvoiceNumber:${\"INV-\" + invoiceNum}`);\r\n\r\n//Invoice Number: 1350\r\n// interpolation take first before function call\r\nfunction showMessage(message){\r\n\tlet invoiceNum='99';\r\n    console.log(message);\r\n}\r\nlet invoiceNum='1350';\r\nshowMessage(`InvoiceNumber:${invoiceNum}`);\r\n \r\n\r\n//[\"template\"]\r\nfunction processInvoice(segments){\r\n\tconsole.log(segments);\r\n}\r\nprocessInvoice`template`;\r\n\r\n//[\"Invoice: \", \" for \", \"\"]\r\n//[1350, 2000]\r\nfunction processInvoice(segments,...values){\r\n\tconsole.log(segments);\r\n\tconsole.log(values);\r\n}\r\nlet invoiceNum='1350';\r\nlet amount='2000';\r\nprocessInvoice`Invoice:${invoiceNum}for${amount}`;\r\n\r\n//Destructuring\r\n// means take apart items from an structure\r\n// for Array its element, for object it properties,\r\n// for string its character\r\n//50000\r\nlet salary=['32000','50000','75000'];\r\nlet [low,average,high]=salary;\r\nconsole.log(average);\r\n\r\n//undefined\r\nlet salary=['32000','50000'];\r\nlet [low,average,high]=salary;\r\nconsole.log(high);\r\n\r\n//75000\r\nlet salary=['32000','50000','75000'];\r\nlet [low,,high]=salary;\r\nconsole.log(high);\r\n\r\n//[\"50000\", \"75000\"]\r\nlet salary=['32000','50000','75000'];\r\nlet[low,...remaining]=salary;\r\nconsole.log(remaining);\r\n\r\n//88000\r\nlet salary=['32000','50000'];\r\nlet[low,average,high='88000']=salary;\r\nconsole.log(high);\r\n\r\n//88000\r\nlet salary=['32000','50000',['88000','99000']];\r\nlet[low,average,[actualLow,actualHigh]]=salary;\r\nconsole.log(actualLow);\r\n\r\n// 88000\r\nlet salary=['32000','50000'];\r\nlet low,average,high;\r\n[low,average,high='88000']=salary;\r\nconsole.log(high);\r\n\r\n//50000\r\nfunction reviewSalary([low,average],high='88000'){\r\n\tconsole.log(average);\r\n}\r\nreviewSalary(['32000','50000']);\r\n// for objects\r\n//75000\r\nlet salary={low:'32000',average:'50000',high:'75000'};\r\nlet{low,average,high}=salary;\r\nconsole.log(high);\r\n\r\n//75000\r\nlet salary={low:'32000',average:'50000',high:'75000'};\r\nlet{low:newLow,average:newverage,high:newHigh}=salary;\r\nconsole.log(newHigh);\r\n\r\n//Syntax Error becuase {} also define block scope\r\nlet salary={low:'32000',average:'50000',high:'75000'};\r\nlet newLow,newverage,newHigh;\r\n{low:newLow,average:newverage,high:newHigh}=salary;\r\nconsole.log(newHigh);\r\n\r\n//75000\r\nlet salary={low:'32000',average:'50000',high:'75000'};\r\nlet newLow,newverage,newHigh;\r\n({low:newLow,average:newverage,high:newHigh}=salary);\r\nconsole.log(newHigh);\r\n\r\n//min: Z max: A\r\nlet[maxCode,minCode]='Z';\r\nconsole.log(`min:${minCode}max:${maxCode}`);\r\n\r\n//Advanced Destructuring\r\n\r\n/*high: undefined\r\nlow: undefined */\r\nlet[high,low]=[,];\r\nconsole.log(`high:${high}low:${low}`);\r\n\r\n// below because destructuring require a iterator\r\n//Runtime Error: Unable to get property 'Symbol.iterator' of undefined or null reference\r\nlet[high,low]=undefined;\r\nconsole.log(`high:${high}low:${low}`);\r\n \r\n//Runtime Error: Unable to get property 'Symbol.iterator' of undefined or null reference\r\nlet[high,low]=null;\r\nconsole.log(`high:${high}low:${low}`);\r\n\r\n//TypeError\r\ntry{\r\n\t//let[high,low,]=undefined;\r\n}\r\ncatch(e)\r\n{\r\n\tconsole.log(e.name);\r\n}\r\n//high: 500 low: 200\r\nlet [high,low,]=[500,200];\r\nconsole.log(`high:${high}low:${low}`);\r\n\r\n//5 10\r\n/*\r\nfor(let [a,b] of [[5,10]]){\r\n\tconsole.log(`${a}${b}`);\r\n}\r\n*/\r\n//5 10\r\n//1\r\n/*\r\nlet count=0;\r\nfor(let[a,b] of [[5,10]]){\r\n\tconsole.log(`${a}${b}`);\r\n\tcount++;\r\n}\r\nconsole.log(count); \r\n*/\r\n//123 message\r\n/*\r\ntry\r\n{\r\n\tthrow [123,'message'];\r\n}\r\ncatch(\r\n\t[invoiceNum,errorMessage]){console.log(`${invoiceNum}${errorMessage}`);\r\n}\r\n*/\r\n//{high: 500, low: 200}\r\nfunction getResult(){\r\n\tlethigh,low;\r\n\treturn{high,low}={high:500,low:200};\r\n}\r\nconsole.log(getResult());\r\n \r\n\r\n//1000 20 400\r\nlet nums={high:1000,low:20,average:400};\r\nlet high,low,average;\r\n({high,low}={average}=nums);\r\n\r\nconsole.log(`${high}${low}${average}`);\r\n"
+            ],
+            "outputs": []
+        }
+    ]
+}

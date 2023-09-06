@@ -1,0 +1,276 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "// Creating class\r\nclass Vehicle{\r\n    constructor()\r\n    {\r\n        this.type='car';\r\n    }\r\n    start(){\r\n        return `Starting: ${this.type}`\r\n    }\r\n}\r\nvar veh=new Vehicle();\r\nconsole.log(veh);\r\nconsole.log(veh.start());\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Vehicle { type: 'car' }",
+                                "Starting: car",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Inheritance\r\n\r\nclass Car extends Vehicle{\r\n\r\n}\r\n\r\nvar car=new Car();\r\nconsole.log(car);\r\nconsole.log(car.start());"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Car { type: 'car' }",
+                                "Starting: car",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "class Car1 extends Vehicle{}\r\nvar car1=new Car1();\r\nconsole.log(car1);\r\nconsole.log(car1.start());"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Car1 { type: 'car' }",
+                                "Starting: car",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Including base class\r\n\r\nclass Car2 extends Vehicle{\r\n    constructor()\r\n    {\r\n        super();\r\n    }\r\n}\r\nvar car2=new Car2();\r\nconsole.log(car2);\r\nconsole.log(car2.start());"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Car2 { type: 'car' }",
+                                "Starting: car",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "class Car3 extends Vehicle{\r\n    start()\r\n    {\r\n        return 'car 3 starting';\r\n    }\r\n}\r\n\r\nvar car3=new Car3();\r\nconsole.log(car3);\r\nconsole.log(car3.start());// car 3 starting"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Car3 { type: 'car' }",
+                                "car 3 starting",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "class Car4 extends Vehicle{\r\n    start()\r\n    {\r\n        return 'car 3 starting ' + super.start();\r\n    }\r\n}\r\n\r\nvar car4=new Car4();\r\nconsole.log(car4);\r\nconsole.log(car4.start());// car 3 starting Starting: car\r\nconsole.log(car4.__proto__) // vehicle\r\n// We also have export and import ....from  in module"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Car4 { type: 'car' }",
+                                "car 3 starting Starting: car",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/*\r\nsome build in object\r\n*/\r\nconsole.log(typeof(Math))\r\nconsole.log(typeof(String))\r\nconsole.log(typeof(Date))\r\nconsole.log(typeof(Number))\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "object",
+                                "function",
+                                "function",
+                                "function",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Type of\r\n\r\nconsole.log(typeof(1));//number\r\nconsole.log(typeof(true));//boolean\r\nconsole.log(typeof(\"True\"));//string\r\nconsole.log(typeof(function(){}));//function\r\nconsole.log(typeof({}));//object\r\nconsole.log(typeof(null));//object\r\nconsole.log(typeof(undefined));//undefined\r\nconsole.log(typeof(NaN));//number"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "number",
+                                "boolean",
+                                "string",
+                                "function",
+                                "object",
+                                "object",
+                                "undefined",
+                                "number",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Converstion\r\n//anything to string\r\n\r\n//convert to string\r\nlet foo123=123;\r\nconsole.log(foo123.toString(), typeof(foo123.toString()));\r\n\r\n//convert string to interger\r\n\r\nconsole.log(Number.parseInt('55'), typeof(Number.parseInt('55')));\r\nconsole.log(Number.parseFloat('55.98'), typeof(Number.parseFloat('55.98')));\r\n//this will skip characters \r\nconsole.log(Number.parseInt('55ABC'), typeof(Number.parseInt('55ABC'))); //55\r\nconsole.log(Number.parseInt('ABC55ABC'), typeof(Number.parseInt('ABC55ABC'))); //NaN"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "123 string",
+                                "55 number",
+                                "55.98 number",
+                                "55 number",
+                                "NaN number",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/* \r\nObjects\r\nobject and name value pair called properties\r\n*/\r\nlet person={\r\n    name:\"Ankur\", //this is property\r\n    age:32,\r\n    parttime:false\r\n}\r\nconsole.log(person.name, person.age, person.parttime, typeof(person))\r\n\r\nperson.age=40;//changing object\r\nconsole.log(person.age);\r\n\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Ankur 32 false object",
+                                "40",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n\r\n//Construction Function\r\n//declarations\r\nfunction Car(id){\r\n    this.carId=id, // properties\r\n    this.start=function() // method\r\n    {\r\n        console.log('start: ' + this.carId)\r\n    };\r\n}\r\n// create\r\nlet c= new Car(456);\r\nc.start();\r\n//prototype\r\n//declarations\r\nfunction CarP(id){\r\n    this.carId=id // properties\r\n    \r\n}\r\n\r\n//Adding Prototype\r\n// Prottyping save memory by adding menthod directly to the prototype instead of function itself\r\nCarP.prototype.start=function() // method\r\n    {\r\n        console.log('start: ' + this.carId)\r\n    };\r\n\r\n// create\r\nlet cP= new CarP(342);\r\ncP.start();\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "start: 456",
+                                "start: 342",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "'use strict'\r\n\r\nfunction logValue(obj)\r\n{\r\n    console.log(obj);\r\n}\r\n\r\n\r\n//Object literals\r\n\r\nvar cat={name:'cat', color:'white'}\r\nlogValue(cat);\r\nlogValue(cat.name);\r\n\r\n//Adding properties in dynamic language\r\ncat.age=3;\r\nlogValue(cat);\r\n//Adding Methods\r\ncat.speak=function(){console.log('speak')};\r\ncat.speak();\r\n\r\n//We can create object literals as below\r\nvar cat1= {name:'cat', color:'white', age:4,speak:function(){console.log('c1 speak')}};\r\n\r\nlogValue(cat1);cat1.speak();\r\n\r\n//construction function to create multiple instance\r\nfunction Dog()\r\n{\r\n    this.name='myDog',\r\n    this.color='White'\r\n}\r\n//this is just function not object\r\nfunction DogFn()\r\n{\r\n    let name='myDog';\r\n    let color='White';\r\n}\r\n\r\nvar dog= new Dog();\r\nlogValue(dog);\r\n\r\n// what if I remove 'new' . It will not construct the object and return undefine\r\ntry\r\n{\r\n    var dog1= Dog(); // Here 'this' keyword will refer to global object and so properties will be undefined\r\n    logValue(dog);\r\n}\r\ncatch(ex)\r\n{\r\n    logValue(ex);\r\n}\r\nvar d=DogFn();\r\nlogValue(d);\r\n\r\n// Now let create good construction function\r\nfunction DogCo(name, color)\r\n{\r\n    this.name=name;\r\n    this.color=color;\r\n}\r\nvar mydog=new DogCo('MyDog', 'Black');\r\nlogValue(mydog);\r\n\r\n// Object.create \r\n// this is actually what happen internallly when you used Object literal or contruction function\r\n\r\nvar catObj= Object.create(Object.prototype,{\r\n    name:{\r\n        value:'Cat',\r\n        enumerable:true,\r\n        writable:true,\r\n        configurable:true\r\n    },\r\n    color:{\r\n        value:'White and Black',\r\n        enumerable:true,\r\n        writable:true,\r\n        configurable:true\r\n    }\r\n})\r\nlogValue(catObj);\r\n// ES6 Classes\r\nclass classCat\r\n{\r\n    constructor(name, color)\r\n    {\r\n        this.name=name;\r\n        this.color=color;\r\n    }\r\n}\r\nvar cclass= new classCat('catclass', 'NA');\r\nlogValue(cclass);\r\n\r\nclass classCatWithMethod\r\n{\r\n    constructor(name, color)\r\n    {\r\n        this.name=name;\r\n        this.color=color;\r\n    }\r\n    speak(){\r\n        console.log('say');\r\n    }\r\n}\r\n\r\nvar classCatMethod= new classCatWithMethod('methodcat', 'color');\r\nlogValue(classCatMethod);\r\nclassCatMethod.speak();\r\n\r\n/*Object Properties*/\r\n// Using Bracket Notation\r\n\r\nvar horse={\r\n    name:'Horse',\r\n    color:'Brown'\r\n}\r\n\r\nlogValue(horse.color);\r\nlogValue(horse['color']);// Same as above\r\n\r\nhorse['leg']=4;\r\nlogValue(horse);\r\n\r\n// Get Property Descriptor\r\nlogValue(Object.getOwnPropertyDescriptor(horse,'name')); //Object {value: \"Horse\", writable: true, enumerable: true, configurable: true}\r\n\r\nhorse.name='ChangedHorse';\r\nlogValue(horse);\r\n\r\n// Writable\r\nObject.defineProperty(horse, 'name', {writable:false});\r\ntry{\r\n    horse.name='ChangeHorse1';// TypeError: Cannot assign to read only property 'name' of object '#<Object>'\r\n    // this error comes only in strict mode\r\n}\r\ncatch(ex)\r\n{\r\n    logValue(ex);\r\n}\r\n// Look at below example\r\nvar horse1={\r\n    name:{first:'myhorse', last:'last'},\r\n    color:'Brown'\r\n}\r\nObject.defineProperty(horse1, 'name', {writable:false});\r\ntry{\r\n    horse1.name='ChangedHorse1';// TypeError: Cannot assign to read only property 'name' of object '#<Object>'\r\n    // this error comes only in strict mode\r\n}\r\ncatch(ex)\r\n{\r\n    logValue(ex);\r\n}\r\n\r\n// but see i can change first evn though name is writable =false as it only look the top level pointer not the object below\r\nhorse1.name.first='ChangedHorse1';\r\n\r\nlogValue(horse1);\r\nlogValue(horse1.name.first);\r\n\r\n// to block that we need to freeze entire property\r\nObject.freeze(horse1.name);\r\ntry{\r\n    horse.name.first='ChangeHorse2';// TypeError: Cannot assign to read only property 'first' of object '#<Object>'\r\n    // this error comes only in strict mode\r\n}\r\ncatch(ex)\r\n{\r\n    console.log(ex, 'freeze');\r\n}\r\n// Enumerable\r\nvar myobject={\r\n    name:{first:'first', last:'last'},\r\n    color:'color'\r\n}\r\n\r\n// 'for... in' loop\r\nfor(var propName in myobject)\r\n{\r\n    console.log(propName + ':' + myobject[propName], 'enumerable'); // use of bracket notation \r\n    //name:[object Object] \r\n    //color:color \r\n}\r\nconsole.log(Object.keys(myobject), 'enumerable');// Array(2) [\"name\", \"color\"]\r\nconsole.log(JSON.stringify(myobject), 'enumerable');// {\"name\":{\"first\":\"first\",\"last\":\"last\"},\"color\":\"color\"} \r\n\r\n\r\nObject.defineProperty(myobject, 'name', {enumerable:false});\r\nfor(var propName in myobject)\r\n{\r\n    console.log(propName + ':' + myobject[propName], 'non enumerable'); // use of bracket notation \r\n    //color:color \r\n}\r\nconsole.log(Object.keys(myobject), 'non enumerable');// Array(1) [\"color\"]\r\nconsole.log(JSON.stringify(myobject), 'non enumerable');// {\"color\":\"color\"}\r\n\r\n// configurable\r\nvar sheep={\r\n    name:{first:'first', last:'last'},\r\n    color:'color'\r\n}\r\nObject.defineProperty(sheep, 'name', {writable:false}) // Allowed\r\nObject.defineProperty(sheep, 'name', {enumerable:false}) // Allowed\r\n\r\nconsole.log(sheep,'before delete');// Object {color: \"color\", name: Object}\r\ndelete sheep.color;\r\nconsole.log(sheep,'after delete');//Object {name: Object}\r\n\r\nsheep['color']='Changed color';//Object {color: \"Changed color\", name: Object}\r\nlogValue(sheep);\r\n\r\nObject.defineProperty(sheep, 'name', {writable:true}) // Allowed\r\nObject.defineProperty(sheep, 'name', {enumerable:true}) // Allowed\r\n\r\n// now making property non configurable\r\nObject.defineProperty(sheep, 'name', {configurable:false})\r\ntry{\r\n    Object.defineProperty(sheep, 'name', {enumerable:false}) //not allowed\r\n}\r\ncatch(ex)\r\n{\r\n    console.log(ex, 'configuration=false') //TypeError: Cannot redefine property: name\r\n}\r\ntry{\r\n    \r\n    Object.defineProperty(sheep, 'name', {configurable:true})//not allowed\r\n}\r\ncatch(ex)\r\n{\r\n    console.log(ex, 'configuration=false') //TypeError: Cannot redefine property: name\r\n}\r\nObject.defineProperty(sheep, 'color', {configurable:false})\r\ntry{\r\n    \r\n delete sheep.color;//not allowed\r\n}\r\ncatch(ex)\r\n{\r\n    console.log(ex, 'configuration=false')// TypeError: Cannot delete property 'color' of #<Object>\r\n}\r\n\r\n\r\n// getters and setters\r\n\r\nvar person={\r\n    name:{first:'first', last:'last'}\r\n}\r\nObject.defineProperty(person, 'fullname',\r\n{\r\n    get:function(){\r\n        return this.name.first + ' ' + this.name.last;\r\n    },\r\n    set:function(value){\r\n        var parts= value.split(' ');\r\n        this.name.first=parts[0];\r\n        this.name.last=parts[1];\r\n    }\r\n})\r\n\r\nconsole.log(person, person.fullname, person.name.first, person.name.last);\r\n/*Object {name: Object, fullname: <accessor>}\r\nfirst last\r\nfirst\r\nlast\r\n*/\r\nperson.fullname='first1 last123';\r\nconsole.log(person, person.fullname, person.name.first, person.name.last);\r\n/*Object {name: Object, fullname: <accessor>}\r\nfirst1 last123\r\nfirst1\r\nlast123\r\n*/\r\n\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ name: 'cat', color: 'white' }",
+                                "cat",
+                                "{ name: 'cat', color: 'white', age: 3 }",
+                                "speak",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

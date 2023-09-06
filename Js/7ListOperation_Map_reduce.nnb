@@ -1,0 +1,118 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Map"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/*List Transform-map-\r\nTransform and array as per some predicate \r\nImplemented as prototype on Array\r\nit is voilation of functional programming because it does not take param \r\nIt  compose as chain\r\n*/\r\n//below all are pure functions\r\n//map\r\n\r\nfunction doubleIt(v){return v*2};\r\nconsole.log(doubleIt(4)); //8\r\n//old way\r\nfunction transform(array,fn)\r\n{\r\n    var list=[];\r\n    for(var i=0;i<array.length;i++)\r\n    {\r\n        list[i]=fn(array[i]);\r\n    }\r\n    return list;\r\n}\r\n\r\nvar transformValue=transform([1,2,3,4,5],doubleIt);\r\nconsole.log(transformValue);\r\n\r\n//new way\r\nvar transformNewValue=[1,2,3,4,5].map(doubleIt);\r\nconsole.log(transformNewValue);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "8",
+                                "[ 2, 4, 6, 8, 10 ]",
+                                "[ 2, 4, 6, 8, 10 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Filter"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//List Exclusion - Filter\r\nfunction isOdd(v){return v%2==1;}\r\nconsole.log(isOdd(5));\r\nconsole.log(isOdd(6));\r\n\r\n\r\n//old way\r\nfunction exclude(array,fn)\r\n{\r\n    var list=[];\r\n    for(var i=0;i<array.length;i++)\r\n    {\r\n        if(fn(array[i]))\r\n        {\r\n            list.push(array[i]);\r\n        }\r\n    }\r\n    return list;\r\n}\r\n\r\nvar filterValue=exclude([1,2,3,4,5],isOdd);\r\nconsole.log(filterValue);\r\n\r\n//new way\r\nvar filterNewValue=[1,2,3,4,5].filter(isOdd);\r\nconsole.log(filterNewValue);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//list compositions\r\n//reduce\r\n// it will take intital value and then take 1 element and then componse and then result is aggain compose \r\n// with next element and so on\r\nfunction mult(x,y){return x*y;}\r\nconsole.log(mult(5,10));\r\n\r\n//old way\r\nfunction compose(array,fn, initial)\r\n{\r\n    var total=initial;\r\n    for(var i=0;i<array.length;i++)\r\n    {\r\n        total=fn(total,array[i]);\r\n    }\r\n    return total;\r\n}\r\n\r\nvar reduceValue=compose([1,2,3,4,5],mult,1);\r\nconsole.log(reduceValue);\r\n\r\n//new way\r\nvar reduceNewValue=[1,2,3,4,5].reduce(mult,1);\r\nconsole.log(reduceNewValue);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "50",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Iteration\r\n// this is only done when my predicate has some side effect\r\n//foreach produce side effect\r\nfunction logValue(v){console.log(v);}\r\nlogValue(10);\r\n\r\n//old way\r\nfunction iterate(array,fn)\r\n{\r\n    for(var i=0;i<array.length;i++)\r\n    {\r\n        fn(array[i]);\r\n    }\r\n}\r\n\r\niterate([1,2,3,4,5],logValue);\r\n//new way\r\n[1,2,3,4,5].forEach(logValue);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "10",
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

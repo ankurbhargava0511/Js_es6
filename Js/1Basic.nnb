@@ -1,0 +1,591 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Javascript"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Variable"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let var1=\"t\"\r\nlet var2=\"tt\"\r\nconsole.log(var1,var2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "t tt",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let var3=\"x\"\r\nlet var4=\"xx\"\r\nconsole.log(var3,var4)\r\nconsole.log(typeof(\"hello\"))\r\nconsole.log(typeof(1))\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "x xx",
+                                "string",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//string\r\n//console.log(\"Hello\")\r\nconsole.log(\"Hel'lo\")\r\nconsole.log('He\"\"\"\"llo')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hel'lo",
+                                "He\"\"\"\"llo",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//number\r\nlet price=5.00, price2=4.55;\r\nconsole.log(price,price2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "5 4.55",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//+sign\r\nlet price=5.00, price2=4.55;\r\nlet var1=\"t\"\r\nlet var2=\"tt\"\r\nconsole.log(price+ price2)\r\nconsole.log(var1 + var2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "9.55",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//simple operations + - * / % ()\r\nvar number1=5\r\nvar number2=3\r\n\r\nconsole.log(number1 + number2)\r\nconsole.log(number1 - number2)\r\nconsole.log(number1 * number2)\r\nconsole.log(number1 / number2)\r\nconsole.log(number1 % number2)\r\n\r\nconsole.log(4+5 *2)\r\nconsole.log((4+5) *2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "8",
+                                "2",
+                                "15",
+                                "1.6666666666666667",
+                                "2",
+                                "14",
+                                "18",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//some special values\r\nconsole.log(10/0) //infinity\r\nconsole.log(0/0) //NaN\r\nconsole.log(0/10)\r\n//typeof is number\r\nconsole.log(typeof(10/0))\r\nconsole.log(typeof(0/0))\r\nconsole.log(typeof(0/10))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Infinity",
+                                "NaN",
+                                "0",
+                                "number",
+                                "number",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//Boolean \r\nconsole.log(typeof(true),typeof(false))\r\n\r\n//undefine and null\r\n//null is of type object\r\nconsole.log(typeof(undefined), typeof(null))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "boolean boolean",
+                                "undefined object",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Array-- its of type object\r\nlet values=[]\r\nconsole.log(typeof(values)) \r\nconsole.log(values[1]) //undefined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "object",
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let values1=[1,2,3]\r\nconsole.log(values1[1])\r\nconsole.log(values1)//Array(3) [1, 2, 3]\r\nconsole.log(values1.length)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Array-- its of type object\r\nlet values=[]\r\nconsole.log(typeof(values)) \r\nconsole.log(values[1]) //undefined\r\n\r\n//Adding at last\r\nvalues.push(1)\r\nconsole.log(values)\r\nvalues.push(2)\r\nconsole.log(values) //Array(2) [1, 2]\r\nvalues.push(3)\r\nconsole.log(values) //Array(3) [1, 2, 3]\r\n\r\n//removing last elemnt\r\nlet result=values.pop()\r\nconsole.log(result, values) //3 Array(2) [1, 2]\r\n//removing first elemnt\r\nresult =values.shift()\r\nconsole.log(result,values) //1 Array(1) [ 2]\r\nvalues.push(3)\r\nconsole.log(values) //Array(2) [ 2, 3]\r\nvalues.push(1)\r\nconsole.log(values) //Array(2) [2,3,1]\r\n//delete an element\r\nvalues.splice(0,1)// start, number of element to remove\r\nconsole.log(values) //Array(2) [3,1]\r\nvalues.splice(0,2,44,55,66) // start, number of element to remove, ...rest of number to insert\r\nconsole.log(values) //Array(3) [44,55,66]\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "object",
+                                "undefined",
+                                "[ 1 ]",
+                                "[ 1, 2 ]",
+                                "[ 1, 2, 3 ]",
+                                "3 [ 1, 2 ]",
+                                "1 [ 2 ]",
+                                "[ 2, 3 ]",
+                                "[ 2, 3, 1 ]",
+                                "[ 3, 1 ]",
+                                "[ 44, 55, 66 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Flows"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//If\r\nlet value=5\r\nif(value===5)\r\n    console.log(\"is five\")\r\nvalue=12\r\nif(value>10)\r\n    console.log(\"greater the 10\")\r\nvalue=1\r\nif(value<10)\r\n    console.log(\"less the 10\")\r\nif(value!==10)\r\n    console.log(\"not 10\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "is five",
+                                "greater the 10",
+                                "less the 10",
+                                "not 10",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//truthy and falsy\r\nif(false)\r\n    console.log(\"its falsy\")\r\nelse if(0)\r\n    console.log(\"its falsy\")\r\n    console.log(\"its falsy\")\r\nelse if(null)\r\n    console.log(\"its falsy\")\r\nelse if(undefined)\r\n    console.log(\"its falsy\")\r\nelse if(NaN)\r\n    console.log(\"its falsy\")\r\nelse\r\n    console.log(\"now its truthy\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "now its truthy",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//switch\r\nlet switchvalue=\"Test\"\r\nswitch(switchvalue)\r\n{\r\n    case \"test\":\r\n        console.log(\"test\");\r\n        break;\r\n    case \"Test\":\r\n            console.log(\"Test\");\r\n            break;\r\n    default:\r\n        console.log(\"default\");\r\n        break;\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Test",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//for\r\nconsole.log('for for')\r\nfor(let i=0;i<3;i++)\r\n{\r\n    console.log(i)\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "for for",
+                                "0",
+                                "1",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//while\r\nconsole.log('for while')\r\nlet cn=1\r\nwhile(cn<5)\r\n{\r\n    console.log(cn);\r\n    cn++;\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "for while",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Controlling loop\r\n//you dont need to keep intilized in  for loop but then you have to keep\r\n// intilized before loop\r\n//break statement will exit the loop as sson as it hit break\r\nconsole.log('for break')\r\nlet i=0;\r\nfor (; i<12;i++)\r\n{\r\n    console.log(i)\r\n    if(i===8)\r\n    {\r\n        console.log(\"in if\")\r\n        break;\r\n    }\r\n}\r\nconsole.log(i);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "for break",
+                                "0",
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "in if",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//Continue will only skip current iteration.\r\n// in below statement it will skip 2\r\nconsole.log('for continue');\r\n\r\nfor (let i=0; i<4;i++)\r\n{\r\n    if(i===2)\r\n    {\r\n        console.log(\"in if\")\r\n        continue;\r\n    }\r\n    console.log(i);\r\n}\r\n\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "for continue",
+                                "0",
+                                "1",
+                                "in if",
+                                "3",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/*\r\nOperators\r\n--Equality \r\n*/\r\n\r\nconsole.log(1==\"1\")   // do type conversion \r\nconsole.log(1===\"1\") // false // no type conversion\r\nconsole.log(1===1)\r\nconsole.log(2!=\"1\")\r\nconsole.log(2!=\"2\") //false as this is consider equal\r\nconsole.log(2!==\"1\")\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "false",
+                                "true",
+                                "true",
+                                "false",
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//unary\r\nlet var1=1;\r\nconsole.log(++var1); // increment before //2\r\nconsole.log(var1++); // incremented after //2\r\nconsole.log(var1);//3\r\nconsole.log(--var1); // increment before //2\r\nconsole.log(var1--); // incremented after //1\r\nconsole.log(var1);//1"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2",
+                                "2",
+                                "3",
+                                "2",
+                                "2",
+                                "1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\nlet newVal=\"1\"\r\nconsole.log(typeof(newVal))\r\n\r\nconsole.log(+newVal, typeof(+newVal))\r\nconsole.log(-newVal, typeof(-newVal))\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "string",
+                                "1 number",
+                                "-1 number",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//logical (boolean) &&(AND) ||(OR)  !(NOT)  \r\n\r\nif(5===5 && 3 ===3) // All conditions true\r\n    console.log(\"truthy &&\");\r\nif(5===5 || 3===6 ) // one condition true\r\n    console.log(\"truthy ||\");\r\nif(!(5===7 || 3===6 ))  // no condition true \r\n    console.log(\"truthy !\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "truthy &&",
+                                "truthy ||",
+                                "truthy !",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//truthy and false\r\nlet usersetting =null; // falsy\r\nlet newsetting={name:\"test\"}; // truthy\r\nlet defaultsetting={name:\"default\"};\r\nconsole.log(usersetting||newsetting|| defaultsetting); //test"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ name: 'test' }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Relation operator > < >= <=\r\n\r\n//conditional opertor\r\nconsole.log((5>4) ? 'yes':'no'); //yes\r\nconsole.log((4>5) ? 'yes':'no'); //no"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "yes",
+                                "no",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\n//Asignment operator \r\nlet aVar=50;\r\nconsole.log(aVar +=10);  //50 + 10 =60\r\nconsole.log(aVar -=10);  //60 - 10 =50\r\nconsole.log(aVar /=10);  //50 / 10 =5\r\nconsole.log(aVar *=10);  //5  * 10 =50\r\nconsole.log(aVar %=10);  //50 % 10 =0\r\naVar=50;\r\nconsole.log(aVar <<=1);//100\r\naVar=50;\r\nconsole.log(aVar >>=1);//25\r\naVar=50;\r\nconsole.log(aVar >>>=1) //keep the sign\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "60",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
