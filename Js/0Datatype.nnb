@@ -1,0 +1,25 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Datatypes"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Primitive type stay in memory , so if you cahnge the value of varibale it will point to new memory\r\nPrimitive types are \r\nString\r\nboolean\r\nnull\r\nundefined\r\nnumber\r\nsymbol\r\n\r\nrest everything is a object\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "comparision\r\nobj1== obj2 \r\nobj1=== obj2=> object comparision"
+            ],
+            "outputs": []
+        }
+    ]
+}
