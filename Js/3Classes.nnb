@@ -266,7 +266,84 @@
             ]
         },
         {
-            "language": "typescript",
+            "language": "markdown",
+            "source": [
+                "## from function to Classes"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// construction function \r\nfunction Elf (name, weapon){\r\n    this.name= name;\r\n    this.weapon= weapon;\r\n}\r\n\r\nElf.prototype.attack= function(){\r\n    return this.name + ' attack with ' + this .weapon\r\n}\r\n\r\n//const peter= new Elf('Peter', 'stones')\r\n//console.log(peter.attack());\r\n\r\nconst sam= new Elf('Sam', 'fires')\r\nconsole.log(sam.attack());\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Sam attack with fires",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// ES6 Classes\r\nclass Elf1 {\r\n    constructor(name, weapon){\r\n        this.name= name;\r\n        this.weapon= weapon;\r\n    }\r\n    attack()\r\n    {\r\n        return this.name + ' attack with ' + this .weapon\r\n    }\r\n}\r\n\r\nconst sam= new Elf1('Sam', 'fires')\r\n//console.log(sam.attack());\r\n\r\nconsole.log( sam instanceof Elf1)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// super should be called before this.\r\nclass ElfD extends Elf1{\r\n    constructor(name, weapon, type)\r\n    {\r\n        super(name, weapon)\r\n        this.type= type;\r\n    }\r\n\r\n    make1()\r\n    {\r\n       return 'test is derived';\r\n        \r\n    }\r\n}\r\n\r\nconst peter= new ElfD('Peter', 'stones')\r\nconsole.log(peter.attack());\r\npeter.make1();"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Peter attack with stones",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'test is derived'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
             "source": [
                 ""
             ],
