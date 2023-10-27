@@ -225,7 +225,36 @@
         {
             "language": "typescript",
             "source": [
-                "myArray.includes(1,2) "
+                "myArray.includes(1,2)  "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mfalse\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "myArray.includes(9) // 9 is not in the array"
             ],
             "outputs": [
                 {
@@ -297,7 +326,7 @@
         {
             "language": "typescript",
             "source": [
-                "myArray.find(el=>el>3)"
+                "myArray.find(el=>el>3) // find will take the first element"
             ],
             "outputs": [
                 {

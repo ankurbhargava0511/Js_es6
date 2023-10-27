@@ -1,0 +1,139 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "Memorization"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let cache={};"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\r\nfunction memoizedAddToN(n)\r\n{\r\n    if (n in cache){\r\n        return cache[n];\r\n    }\r\n    else {\r\n        console.log('long time');\r\n        cache[n]=n+1;\r\n        return cache[n];\r\n    }\r\n}\r\n\r\nconsole.log('1', memoizedAddToN(1));\r\nconsole.log('1a', memoizedAddToN(1));\r\nconsole.log('2', memoizedAddToN(2));\r\nconsole.log('2a', memoizedAddToN(2));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1 2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "cache"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "{",
+                                "  \u001b[32m'1'\u001b[39m: \u001b[33m2\u001b[39m,",
+                                "  \u001b[32m'2'\u001b[39m: \u001b[33m3\u001b[39m",
+                                "}"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Currying"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const multiply=(a,b)=> a*b;\r\nconst curriedMult=(a)=>(b)=>a*b;\r\nconst curriedMult5=curriedMult(5);\r\n\r\n//curriedMult5(4)\r\ncurriedMult5(3)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m15\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
